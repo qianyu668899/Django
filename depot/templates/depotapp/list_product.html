@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %} Products List {% endblock %}
+
+{% block content %} 
+<div class="container">	
+	<div class="page-header">
+    <h2>Products List</h2>
+</div>
+{% for item in list_items.object_list %}
+<div class="row" style="padding-top:10">
+	<div class="span3 media-grid">
+		<a href="#">
+	    <img class="thumbnail" src="{{item.image_url}}" alt="" height="160" width="120">
+	    </a>
+	</div>
+	<div class="span-two-thirds">
+		<h4>{{item.title}}</h4>
+		{{item.description}}
+	</div>
+	<div class="span2" style="align:right">
+		<p><a class="btn primary" href="{% url "depotapp.views.view_product" item.id %}">Read</a></a> </p>
+		<p><a class="btn success" href="{% url "depotapp.views.edit_product" item.id %}">Edit</a> </p>
+		<p><a class="btn danger" href="{% url "depotapp.views.del_product" item.id %}">Delete</a></p>
+	</div>
+</div>
+{% endfor %}
+{% if list_items.has_previous %}
+    <a href="?page={{ list_items.previous_page_number }}">Prev</a>
+{% endif %}
+
+<span class="current">
+    Page {{ list_items.number }} / {{ list_items.paginator.num_pages }}
+</span>
+
+{% if list_items.has_next %}
+        <a href="?page={{ list_items.next_page_number }}">Next</a>
+{% endif %}
+<p>
+<a href="{% url "depotapp.views.create_product" %}">Add New</a>
+</p>
+{% endblock %}
+
