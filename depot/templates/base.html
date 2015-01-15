@@ -5,7 +5,7 @@
 	<meta name="description" content="a depot implement with Django"/>
 	<meta name="keywords" content="django,depot" />
 	<meta name="author" content="YuQian(http://my.csdn.net/?ref=toolbar_logo)" />
-	<title>{% block title %} 标题 {% endblock %}</title>
+	<title>{% block title %} Title {% endblock %}</title>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,7 +26,7 @@
             <li class="active"><a href="{% url "depotapp.views.return_home" %}">Home</a></li>
             <li><a href="#Problem">Problem</a></li>
             <li><a href="#News">News</a></li>
-			<li><a href="#contact">Contact</a></li>
+			      <li><a href="#contact">Contact</a></li>
           </ul>
          {% if request.user.is_authenticated %}
 		<div class="pull-right">
@@ -51,15 +51,14 @@
         <div class="page-header">
           <h1>{% block pagename %} My reading list {% endblock %}</h1>
         </div>
-		{% block content %} 
-		内容
-		{% endblock %}
-	</div><!-- /content -->
+		      {% block content %} 
+	           Content
+		      {% endblock %}
+	    </div><!-- /content -->
+    </div><!-- /container -->
 
-	
-	</div><!-- /container -->
 	  <script src="/static/js/jquery-1.7.1.min.js"></script>
-    {% block js %}
+     {% block js %}
         <!--这里插入具体页面引用的js库，或者js代码-->
      {% endblock %}
     <script>
