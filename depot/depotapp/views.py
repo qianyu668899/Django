@@ -14,7 +14,7 @@ from django.core.urlresolvers import reverse
 from models import *
 from forms import *
 import datetime
-from djangorestframework.views import View
+#from djangorestframework.views import View
 from django.db import transaction
 from django.contrib.auth import authenticate,login,logout  
 from django.contrib.auth.decorators import login_required
@@ -90,7 +90,7 @@ def create_product(request):
     #return list_product(request)
 
 
-
+'''
 class RESTforCart(View):
     def get(self, request, *args, **kwargs):
         return request.session['cart'].items
@@ -102,7 +102,7 @@ class RESTforCart(View):
         cart.add_product(product)
         request.session['cart'] = cart
         return request.session['cart'].items
-
+'''
 
 @login_required
 def list_product(request):

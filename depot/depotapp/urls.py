@@ -2,7 +2,7 @@
 from django.conf.urls import *
 from models import *
 from views import *
-from djangorestframework.views import ListOrCreateModelView, InstanceModelView
+#from djangorestframework.views import ListOrCreateModelView, InstanceModelView
 from resources import * 
 
 urlpatterns = patterns('',
@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     (r'cart/add/(?P<id>[^/]+)/$', add_to_cart),
     (r'cart/clean/', clean_cart),
     #(r'API/cart/items', ListOrCreateModelView.as_view(resource=LineItemResource)),
-    (r'API/cart/items', RESTforCart.as_view(resource=LineItemResource)),
+    #(r'API/cart/items', RESTforCart.as_view(resource=LineItemResource)),
     (r'order/create/$', create_order),
     (r'order/list/$', list_order ),
     (r'order/edit/(?P<id>[^/]+)/$', edit_order),
