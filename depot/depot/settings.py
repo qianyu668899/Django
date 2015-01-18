@@ -133,7 +133,7 @@ INSTALLED_APPS = (
      'django.contrib.admin',
      'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
     'depotapp',
     'django-groundwork',
     'rest_framework',
