@@ -1,0 +1,9 @@
+syntax: glob
+*.pyc
+*.swp
+*.swo
+build/
+dist/
+django_articles.egg-info
+MANIFEST
+
