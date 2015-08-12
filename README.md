@@ -9,16 +9,26 @@ Django applications
  ```
 
 2. Use django-admin to create an new app
+```python
   django-admin startproject myapp
-
+```
    The structure it generated is as follows:
+
       mysite/
+
           manage.py
+
           mysite/
+
             __init__.py
+
             settings.py
+
             urls.py
+            
             wsgi.pys
 
 3. Use manage.py to start your first app
+```python
   python manage.py runservers
+```
